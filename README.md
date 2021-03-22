@@ -19,3 +19,8 @@ Let's start with Elixir.
 
 [Setup]: https://elixir-lang.org/install.html
 [Intro]: https://github.com/ShivangDave/elixir-repo/tree/main/intro
+
+#### References
+- [Programming Elixir 1.6]
+
+[Programming Elixir 1.6]: https://pragprog.com/titles/elixir16/programming-elixir-1-6/
