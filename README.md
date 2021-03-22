@@ -6,8 +6,6 @@
 
 So in 2021, I'm going to try and experiment with as many platforms as I can. It is definitely going to be an interesting journey. Also, I'm going to document all of it.
 
-Let's start with Elixir.
-
 #### Let's set it up 💻
 - [Setup]
 

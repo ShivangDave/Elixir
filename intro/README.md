@@ -1,3 +1,5 @@
+# Introduction
+
 #### Objectives
 - Functional Programming
 - Immutable State
