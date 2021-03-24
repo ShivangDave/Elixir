@@ -45,6 +45,8 @@ Great language for Parallel Programming? A language first needs to be great at s
   ```
   - Elixir calls this process **pattern matching**
 
+---
+
 #### Exercise
 
 ```elixir
@@ -60,6 +62,8 @@ Great language for Parallel Programming? A language first needs to be great at s
 
 ```
 
+---
+
 #### Don't want to read a pattern match?
 - If we didn't need to capture a value during the match, we can use the special variable `_`.
 - This acts like a variable but immediately discards any value given to it in a pattern match.
@@ -68,3 +72,69 @@ Great language for Parallel Programming? A language first needs to be great at s
   ```elixir
     > [_, a, _] = [1, 3, 5]
   ```
+
+---
+
+#### Variables Bind Once (per match)
+- Once a variable has been bound to a value in the matching process, it keeps the value for the remainder of the match.
+```elixir
+  > [a, a] = [1, 1] # works
+  > a
+  1
+  > [b, b] = [1, 2] # Doesn't work
+  ** (MatchError)
+```
+
+- However, variables can be bound to a new value in a later match.
+```elixir
+  > a = 1
+  > a
+  1
+  > [1, a, 3] = [1, 2, 3] #Works
+  > a
+  2
+```
+
+- If you want to force elixir to use current value of the variable in a new pattern match, then use `^`. It is called **pin operator**
+```elixir
+  > a = 1
+  1
+  > a = 2
+  2
+  > ^a = 3
+  ** (MatchError) # Because a is 2
+
+  # This also works if variable is component of a pattern
+
+  > a = 1
+  > [^a, 2, 3] = [1, 2, 3] # Works
+  ...
+  > a = 2
+  > [^a, 2] = [1, 2] # Doesn't work as a is 2
+```
+
+---
+
+#### Exercise
+  ```elixir
+
+    > [a, b, a] = [1, 2, 3] # No
+    > [a, b, a] = [1, 1, 2] # No
+    > [a, b, a] = [1, 2, 1] # Yes
+
+    # The variable a is bound to 2 for following.
+    # a = 2
+    > [a, b, a] = [1, 2, 3] # No
+    > [a, b, a] = [1, 1, 2] # No
+    > a = 1 # Yes
+    > ^a = 2 # Yes because a is 2
+    > ^a = 1 # No
+    > ^a = 2 - a # No
+  ```
+
+---
+
+### Another way of looking at the `=` sign
+- You do not store the values in a variable anymore. You make an assertion.
+- Just like in algebra. `x = a + 1`, You're not assigning value of `a + 1` to `x` but making an assertion that `x` & `a + 1` have the same value. If you know the value of `x` then you can work out `a + 1` and vice versa.
+- This is different compared to imperative programming languages. Hence, we gotta unlearn what `=` means.
