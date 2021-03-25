@@ -1,4 +1,4 @@
-## Getting the website up
+## 3. Getting the website up
 > March 24, 2021 
 > 
 > Today I didn't really get a chance to work on new concepts. Kind of a busy day. Instead, I dedicated some time on getting this page up so that I can blog about the chapters that I go through easily and present it in a prettier format. Kudos to GitHub for building tools such as GitHub Pages which made it really easy to get this page up. 
@@ -6,9 +6,16 @@
 > Still going to be using markdown to write these blogs. But atleast they're going to look prettier than the usual `.md` preview. 
 > 
 > - [Webpage Source]
+
+<br />
+<br />
+
 ____
 
-## The `=` sign isn't the `=` sign anymore! More or less. 
+<br />
+<br />
+
+## 2. The `=` sign isn't the `=` sign anymore! More or less. 
 > March 23, 2021 
 > 
 > Well, well, well. Remember when we used the `=` sign to store values into / assign variables? If you don't, you're going to do just fine in elixir. Turns out, `pattern matching` is a big deal. The `=` sign, formally known as `assignment operator` doesn't do assignment no more.
@@ -20,9 +27,16 @@ ____
 > | 1. | [Intro] |
 > | 2. | [Conventional Programming] |
 > 
+
+<br />
+<br />
+
 ____
 
-## IO.puts "Hello World ☀️"
+<br />
+<br />
+
+## 1. IO.puts "Hello World ☀️"
 > March 22, 2021 
 > 
 > As my 2021 thing, I'm going to try and experiment with as many platforms as I can. It is definitely going to be an interesting journey and for no specific reason, I'm going to document all of it 🤔 I'll be doing everything by the book 📚 Like literally! My notes are derived from [Programming Elixir 1.6] for the most part. 
