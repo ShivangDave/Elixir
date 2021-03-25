@@ -1,10 +1,9 @@
-<h1 style="text-align: left"> 
-    IO.puts "Hello, There" 
-</h1>
+<h2> IO.puts "Hello, There" </h2>
+<h4> March 24, 2021 </h4>
 
 >
-> #### March 24, 2021
-> #### Let's see a preview!
+> 
+> Let's see a preview!
 >
 
 ---
