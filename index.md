@@ -35,6 +35,12 @@ ____
 > 
 > As my 2021 thing, I'm going to try and experiment with as many platforms as I can. It is definitely going to be an interesting journey and for no specific reason, I'm going to document all of it 🤔 I'll be doing everything by the book 📚 Like literally! My notes are derived from [Programming Elixir 1.6] for the most part. 
 >
+> <p align="center">
+>   <a href="https://pragprog.com/titles/elixir16/programming-elixir-1-6/" target="_blank">
+>    <img width="200" src="https://m.media-amazon.com/images/S/aplus-media/vc/fe095293-69e7-419d-93a8-27b006791fb6._CR157,559,2045,2045_PT0_SX300__.jpg">
+>   </a>
+> </p>
+>
 > Today, I didn't really get a chance to go over a lot of stuff. Just the [Setup] & some [Intro]. Coming straight from JS, Functional programming isn't new to me. Here's a list of few things that I've observed so far!
 >
 > - **Things I like 👍🏻 already:**
