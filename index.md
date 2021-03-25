@@ -11,7 +11,6 @@
 
 ____
 
-<br />
 
 ## ⭐️ The `=` sign isn't the `=` sign anymore! More or less. 
 > March 23, 2021 
@@ -30,7 +29,6 @@ ____
 
 ____
 
-<br />
 
 ## ⭐️ IO.puts "Hello World ☀️"
 > March 22, 2021 
