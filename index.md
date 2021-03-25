@@ -19,6 +19,7 @@ ____
 > |-|-|
 > | 1. | [Intro] |
 > | 2. | [Conventional Programming] |
+> 
 ____
 
 ## IO.puts "Hello World ☀️"
