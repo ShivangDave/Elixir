@@ -3,7 +3,7 @@
 > 
 > Today I didn't really get a chance to work on new concepts. Kind of a busy day. Instead, I dedicated some time on getting this page up so that I can blog about the chapters that I go through easily and present it in a prettier format. Kudos to GitHub for building tools such as GitHub Pages which made it really easy to get this page up. 
 >
-> Still going to be using markdown to post these blogs. But atleast they're going to look prettier than the usual README preview. 
+> Still going to be using markdown to write these blogs. But atleast they're going to look prettier than the usual `.md` preview. 
 > 
 > - [Webpage Source]
 ____
