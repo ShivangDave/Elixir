@@ -2,6 +2,10 @@
 > March 24, 2021 
 > 
 > Today I didn't really get a chance to work on new concepts. Kind of a busy day. Instead, I dedicated some time on getting this page up so that I can blog about the chapters that I go through easily and present it in a prettier format. Kudos to GitHub for building tools such as GitHub Pages which made it really easy to get this page up. 
+> 
+> <p align="center">
+>    <img src="https://media4.giphy.com/media/l0He4nkyI5cMhXzvW/200.gif">
+> </p>
 >
 > Still going to be using markdown to write these blogs. But atleast they're going to look prettier than the usual `.md` preview. 
 > 
@@ -16,6 +20,10 @@ ____
 > March 23, 2021 
 > 
 > Well, well, well. Remember when we used the `=` sign to store values into / assign variables? If you don't, you're going to do just fine in elixir. Turns out, `pattern matching` is a big deal. The `=` sign, formally known as `assignment operator` doesn't do assignment no more.
+>
+> <p align="center">
+>    <img height="250" src="https://media2.giphy.com/media/3kzJvEciJa94SMW3hN/giphy.gif?cid=ecf05e47sf4uo73h21ounkn47j2hfi7jfhlf99cboctgtm95&rid=giphy.gif">
+> </p>
 >
 > In elixir, `=` sign is known as **`match`** operator. And instead of assignment, it's all about inference now. Very interesting! I thoroughly enjoyed this chapter. If you want to look at my notes and the exercises, you can find the link in the table below. In this section, I also learned some rules of pattern matching.
 >
