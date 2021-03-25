@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Conventional Programming | Learning Elixir 🧪</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Conventional Programming" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/c_p/" />
+<meta property="og:url" content="http://localhost:4000/c_p/" />
+<meta property="og:site_name" content="Learning Elixir 🧪" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Conventional Programming" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/c_p/","headline":"Conventional Programming","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=774665fe969dcf4dc4d45f16be27602b29e07796">
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Conventional Programming</h1>
+      <h2 class="project-tagline"></h2>
+      
+        <a href="https://github.com/ShivangDave/elixir-repo" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="conventional-programming">Conventional Programming</h1>
+
+<p>Great language for Parallel Programming? A language first needs to be great at sequential programming to excel at Parallel Programming. Let’s explore conventions that make Elixir so powerful.</p>
+
+<h4 id="data-types">Data types</h4>
+<ul>
+  <li>String</li>
+  <li>Integer</li>
+  <li>List (Similar to arrays)</li>
+  <li>Map (Similar to object in JS / hash in Ruby)</li>
+</ul>
+
+<h4 id="variable-assignment">Variable Assignment</h4>
+<ul>
+  <li>Elixir looks for a way to make the value of the left side the same as the value of the right side.</li>
+  <li><code class="language-plaintext highlighter-rouge">=</code> sign doesn’t mean the same as before.</li>
+  <li><code class="language-plaintext highlighter-rouge">=</code> sign doesn’t mean assignment but means assertion.</li>
+  <li>It succeeds if Elixir can find a way of making the left-hand side equal to right-hand side.</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">=</code> sign is called <strong><em>match operator</em></strong> in elixir.</p>
+
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># is true; because a is a variable</span>
+  <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># is true; because a is 1</span>
+  <span class="o">...</span>
+  <span class="o">&gt;</span> <span class="mi">2</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># is false &amp;&amp; produces error</span>
+</code></pre></div>    </div>
+  </li>
+  <li>More complex Example
+  ```elixir
+    <h1 id="elixir-bound-the-variable-list-to-the-list-1-2-3">Elixir bound the variable list to the list [1, 2, 3]</h1>
+    <blockquote>
+      <p>list = [1, 2, 3]
+[a, b, c] = list
+a
+1
+b
+2
+c
+3</p>
+    </blockquote>
+
+    <h1 id="clear">[clear]</h1>
+    <blockquote>
+      <p>list = [1, 2, [3, 4, 5]]
+[a, b, c] = list</p>
+    </blockquote>
+
+    <h1 id="clear-1">[clear]</h1>
+    <blockquote>
+      <p>list = [1, 2, [3, 4]]
+[a, 2, c] = list # still true; as literal 2 pattern matches to 2
+[a, 1, c] = list # false; as literal 1 doesn’t match value on the right</p>
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - Elixir calls this process **pattern matching**
+
+---
+
+#### Exercise
+
+```elixir
+
+  # Which of the following will match?
+  &gt; a = [1,2,3] # Yes
+  &gt; a = 4 # Yes
+  &gt; 4 = a # Yes
+  &gt; [a,b] = [1,2,3] # No
+  &gt; a = [[1,2,3]] # Yes
+  &gt; [a] = [[1,2,3]] # Yes
+  &gt; [[a]] = [[1,2,3]] # No
+
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="dont-want-to-read-a-pattern-match">Don’t want to read a pattern match?</h4>
+<ul>
+  <li>If we didn’t need to capture a value during the match, we can use the special variable <code class="language-plaintext highlighter-rouge">_</code>.</li>
+  <li>This acts like a variable but immediately discards any value given to it in a pattern match.</li>
+  <li>
+    <p>It is like a <strong>wild card</strong></p>
+
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="variables-bind-once-per-match">Variables Bind Once (per match)</h4>
+<ul>
+  <li>Once a variable has been bound to a value in the matching process, it keeps the value for the remainder of the match.
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># works</span>
+<span class="o">&gt;</span> <span class="n">a</span>
+<span class="mi">1</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># Doesn't work</span>
+<span class="o">**</span> <span class="p">(</span><span class="no">MatchError</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>However, variables can be bound to a new value in a later match.
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;</span> <span class="n">a</span>
+<span class="mi">1</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1">#Works</span>
+<span class="o">&gt;</span> <span class="n">a</span>
+<span class="mi">2</span>
+</code></pre></div>    </div>
+  </li>
+  <li>If you want to force elixir to use current value of the variable in a new pattern match, then use <code class="language-plaintext highlighter-rouge">^</code>. It is called <strong>pin operator</strong>
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="mi">1</span>
+<span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="mi">2</span>
+<span class="o">&gt;</span> <span class="o">^</span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">**</span> <span class="p">(</span><span class="no">MatchError</span><span class="p">)</span> <span class="c1"># Because a is 2</span>
+
+<span class="c1"># This also works if variable is component of a pattern</span>
+
+<span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="o">^</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># Works</span>
+<span class="o">...</span>
+<span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="o">^</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># Doesn't work as a is 2</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="exercise">Exercise</h4>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># No</span>
+    <span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># No</span>
+    <span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># Yes</span>
+
+    <span class="c1"># The variable a is bound to 2 for following.</span>
+    <span class="c1"># a = 2</span>
+    <span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># No</span>
+    <span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># No</span>
+    <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Yes</span>
+    <span class="o">&gt;</span> <span class="o">^</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Yes because a is 2</span>
+    <span class="o">&gt;</span> <span class="o">^</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># No</span>
+    <span class="o">&gt;</span> <span class="o">^</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">a</span> <span class="c1"># No</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="another-way-of-looking-at-the--sign">Another way of looking at the <code class="language-plaintext highlighter-rouge">=</code> sign</h3>
+<ul>
+  <li>You do not store the values in a variable anymore. You make an assertion.</li>
+  <li>Just like in algebra. <code class="language-plaintext highlighter-rouge">x = a + 1</code>, You’re not assigning value of <code class="language-plaintext highlighter-rouge">a + 1</code> to <code class="language-plaintext highlighter-rouge">x</code> but making an assertion that <code class="language-plaintext highlighter-rouge">x</code> &amp; <code class="language-plaintext highlighter-rouge">a + 1</code> have the same value. If you know the value of <code class="language-plaintext highlighter-rouge">x</code> then you can work out <code class="language-plaintext highlighter-rouge">a + 1</code> and vice versa.</li>
+  <li>This is different compared to imperative programming languages. Hence, we gotta unlearn what <code class="language-plaintext highlighter-rouge">=</code> means.</li>
+</ul>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/ShivangDave/elixir-repo">This site</a> is maintained by <a href="https://github.com/ShivangDave">ShivangDave</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
