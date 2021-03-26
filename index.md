@@ -5,14 +5,14 @@
 > 
 > Exhibits:
 > <p align="center">
->    <img src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2017/10/12-Obi-Wan-Build-Star-Wars-Meme-1.jpg?q=50&fit=crop&w=740&h=370" height="100">
->    <img src="https://blog.weekdone.com/wp-content/uploads/2019/05/seasons-1-4-seasons-5-8-game-of-thrones-2011-2019-bittersweet-truth-38075610.png" height="100">
->    <img src="https://i.ytimg.com/vi/iLNGJC5igbE/maxresdefault.jpg" height="100">
+>    <img src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2017/10/12-Obi-Wan-Build-Star-Wars-Meme-1.jpg?q=50&fit=crop&w=740&h=370" height="150">
+>    <img src="https://blog.weekdone.com/wp-content/uploads/2019/05/seasons-1-4-seasons-5-8-game-of-thrones-2011-2019-bittersweet-truth-38075610.png" height="150">
+>    <img src="https://i.ytimg.com/vi/iLNGJC5igbE/maxresdefault.jpg" height="150">
 > </p>
 >
-> When it comes to `functional programming`, the statement firmly holds true. Writing code for processes that run parallel to each other and making sure that they don't mess up the `data` and `synchronization` is really where elixir shines. 
+> When it comes to `functional programming`, the statement firmly holds true. Writing code for processes that run parallel to each other and making sure that they don't mess up the `data` and `synchronization` is where elixir really shines. 
 >
-> Today I went over `Immutability` and how it simplifies things for us. Learning about `immutability` also explained how deep the idea of `Data Transformation` is rooted in elixir. In addition to all of this, I also went over how `immutability` affects the performance. (Spoiler alert: Surprisingly, not a lot! 🤯)
+> Today I went over `Immutability` and how it simplifies things for us. Learning about `immutability` also explained how deep the idea of `Data Transformation` is rooted in elixir. In addition to all of this, I also went over how `immutability` affects the efficiency! 🤯
 > 
 > As always, you can find the notes in the table below! 
 >
