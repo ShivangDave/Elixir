@@ -24,5 +24,7 @@ So in 2021, I'm going to try and experiment with as many platforms as I can. It 
 
 #### References
 - [Programming Elixir 1.6]
+    - My notes are pretty much paraphrased content from this book! 
+    - It is definitely one of the great ones. 
 
 [Programming Elixir 1.6]: https://pragprog.com/titles/elixir16/programming-elixir-1-6/

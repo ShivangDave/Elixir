@@ -1,3 +1,35 @@
+## ⭐️ Change isn't always good 🤔
+> March 25, 2021 
+> 
+> ***"Sometimes changing things is a terrible mistake."***
+> 
+> Exhibits:
+> <p align="center">
+>    <img src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2017/10/12-Obi-Wan-Build-Star-Wars-Meme-1.jpg?q=50&fit=crop&w=740&h=370" height="100">
+>    <img src="https://blog.weekdone.com/wp-content/uploads/2019/05/seasons-1-4-seasons-5-8-game-of-thrones-2011-2019-bittersweet-truth-38075610.png" height="100">
+>    <img src="https://i.ytimg.com/vi/iLNGJC5igbE/maxresdefault.jpg" height="100">
+> </p>
+>
+> When it comes to `functional programming`, the statement firmly holds true. Writing code for processes that run parallel to each other and making sure that they don't mess up the `data` and `synchronization` is really where elixir shines. 
+>
+> Today I went over `Immutability` and how it simplifies things for us. Learning about `immutability` also explained how deep the idea of `Data Transformation` is rooted in elixir. In addition to all of this, I also went over how `immutability` affects the performance. (Spoiler alert: Surprisingly, not a lot! 🤯)
+> 
+> As always, you can find the notes in the table below! 
+>
+> | | Title |
+> |-|-|
+> | 1. | [Intro] |
+> | 2. | [Conventional Programming] |
+> | 3. | [Immutability] |
+> 
+> <br />
+> Next up, Some more elixir basics! 👻
+
+<br />
+
+____
+
+
 ## ⭐️ Getting the website up
 > March 24, 2021 
 > 
@@ -69,6 +101,17 @@ ____
 > | | Title |
 > |-|-|
 > | 1. | [Intro] |
+>
+
+<br />
+
+____
+
+
+## 🙏🏻 References
+- [Programming Elixir 1.6]
+    - My notes are pretty much paraphrased content from this book! 
+    - It is definitely one of the great ones.
 
 [Programming Elixir 1.6]: https://pragprog.com/titles/elixir16/programming-elixir-1-6/
 [Setup]: https://elixir-lang.org/install.html
