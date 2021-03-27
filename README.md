@@ -16,11 +16,13 @@ So in 2021, I'm going to try and experiment with as many platforms as I can. It 
 | 1. | [Intro] 👋🏻 |
 | 2. | [Conventional Programming] 🤓 |
 | 3. | [Immutability] 🤷🏻‍♂️ |
+| 4. | [Elixir Basics] 👶🏻 |
 
 [Setup]: https://elixir-lang.org/install.html
 [Intro]: https://github.com/ShivangDave/elixir-repo/tree/main/intro
 [Conventional Programming]: https://github.com/ShivangDave/elixir-repo/tree/main/c_p
 [Immutability]: https://github.com/ShivangDave/elixir-repo/tree/main/immutability
+[Elixir Basics]: https://github.com/ShivangDave/elixir-repo/tree/main/basics
 
 #### References
 - [Programming Elixir 1.6]

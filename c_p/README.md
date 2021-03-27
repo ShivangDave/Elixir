@@ -2,12 +2,6 @@
 
 Great language for Parallel Programming? A language first needs to be great at sequential programming to excel at Parallel Programming. Let's explore conventions that make Elixir so powerful.
 
-#### Data types
-- String
-- Integer
-- List (Similar to arrays)
-- Map (Similar to object in JS / hash in Ruby)
-
 #### Variable Assignment
   - Elixir looks for a way to make the value of the left side the same as the value of the right side.
   - `=` sign doesn't mean the same as before.
