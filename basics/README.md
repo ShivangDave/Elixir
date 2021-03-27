@@ -118,7 +118,7 @@ Elixir collections can hold values of any type (including other collections).
             "next"
         ```
 
-    - It is comon for functions to return a tuple where the first element is atom `:ok` if there were no errors.
+    - It is common for functions to return a tuple where the first element is atom `:ok` if there were no errors.
     - i.e.
         ```elixir
             > { status, file } = File.open("somefile.exs")
@@ -134,4 +134,4 @@ Elixir collections can hold values of any type (including other collections).
             # `enoent` is Unix-speak for "file doesn't exist"
         ```
 
-- Lists:
+- Lists

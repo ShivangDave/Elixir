@@ -1,3 +1,41 @@
+## ⭐️ More Basics... More Fun.. ish..
+> March 27, 2021 
+> 
+> Learning on a saturday doesn't feel quite right. But I did wrap up `Value Types`. Learning about `System Types` was a walk down memory lane. Reminded me of all the code I wrote for multi-threaded apps in `C++` during one of my master's degree classes.  
+> 
+> `Collection Types` in elixir are just a tad different than what I was anticipating. But the weekend vibes aren't going to go away easily. Hopefully I can resume tomorrow starting with learning about `Lists`.
+>  
+> Notes are still upto date on `main` branch if you want 'em 🤘🏻
+>
+
+<br />
+
+____
+
+
+## ⭐️ Elixir Basics
+> March 26, 2021 
+> 
+> <p align="center">
+>    <img src="https://media2.giphy.com/media/xT5LMGfQrJPpmXKUEM/giphy.gif" height="200">
+> </p>
+>
+> Vaccine day hit really hard. Didn't really get much done today. Went over some elixir basics. Started by learning about overall `Built In Types`. Followed by going deeper into `Value Types` subcategory.
+>
+> Prepared some good notes on `Integers`, `Atoms`, `Ranges` and `RegEx`. Good stuff.
+> 
+> | | Title |
+> |-|-|
+> | 1. | [Intro] |
+> | 2. | [Conventional Programming] |
+> | 3. | [Immutability] |
+> | 4. | [Elixir Basics] |
+
+<br />
+
+____
+
+
 ## ⭐️ Change isn't always good 🤔
 > March 25, 2021 
 > 
@@ -118,5 +156,6 @@ ____
 [Intro]: https://github.com/ShivangDave/elixir-repo/tree/main/intro
 [Conventional Programming]: https://github.com/ShivangDave/elixir-repo/tree/main/c_p
 [Immutability]: https://github.com/ShivangDave/elixir-repo/tree/main/immutability
+[Elixir Basics]: https://github.com/ShivangDave/elixir-repo/tree/main/basics
 
 [Webpage Source]: https://github.com/ShivangDave/elixir
