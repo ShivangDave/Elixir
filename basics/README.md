@@ -50,4 +50,88 @@ This list doesn't include things like `String` and `Structures`. Elixir does sup
     - `start..end` => where start and end are integers
 
 - RegEx: 
-    - 
+    - Elixir has regex literals, written as `~r{regexp}` or `~r{regexp}opts`.
+    - Considerably more flexible! Additionally, can choose any `nonalphanumeric characters` as delimiters.
+    - We can also specify one or more single chars options following a regexp literal. 
+    
+    > | Opt | Meaning |
+    > | - | - |
+    > | f |  Force the pattern to start to match on the first line of a multiline string.|
+    > | i | Make matches case insensitive |
+    > | m | If the string to be matched contains multiple lines, ^ and $ match the start and end of these lines. \A and \z continue to match the beginning or end of the string |
+    > | s | Allow. to match any newline characters. |
+    > | U | Normally, modifiers like * and + are greedy, matching as much as possible. The U modifier makes them ungreedy, matching as little as possible. |
+    > | u | Enable unicode-specific patterns like \p |
+    > | x | Enable extended mode - ignore whitespace and comments (`#` to end of line) |
+
+    - e.g.
+    ```elixir
+        > Regex.run ~r{[aeiou]}, "caterpillar"
+        "a"
+
+        > Regex.scan ~r{[aeiou]}, "caterpillar"
+        [["a"], ["e"], ["i"], ["a"]]
+
+        > Regex.split ~r{[aeiou]}, "caterpillar"
+        ["c","t","rp","ll","r"]
+
+        > Regex.replace ~r{[aeiou]}, "caterpillar", "*"
+        "c*t*rp*ll*r"
+    ```
+
+#### **System Types**
+These types reflect resources in the underlying `Erlang VM`.
+
+- PIDs and Ports:
+    - PID is a reference to a local or remote process
+    - Port is a reference to a resource (typically external to the application) that you'll be reading or writing 
+    - PID of the current process is available by calling `self`. A new PID is created when you spawn a new process.
+
+- References:
+    - Function `make_ref` creates a globally unique reference.
+    - It is unique
+
+#### **Collection Types**
+Elixir collections can hold values of any type (including other collections).
+
+- Tuples:
+    - A tuple is an ordered collection of values. 
+    - Once created a tuple cannot be modified.
+    - i.e.
+        ```elixir
+            > { 1, 2 }
+            > { :ok, 42, "next" }
+            > { :error, :enoent }
+        ```
+    - A typical elixir tuple has `two` to `four` elements.
+    - If you need more then we can use `maps` or `structs`.
+    - Can be used in pattern matching too.
+    - i.e.
+        ```elixir
+            > { status, count, action } = { :ok, 42, "next" }
+            { :ok, 42, "next" }
+            > status
+            :ok
+            > count
+            42
+            > action
+            "next"
+        ```
+
+    - It is comon for functions to return a tuple where the first element is atom `:ok` if there were no errors.
+    - i.e.
+        ```elixir
+            > { status, file } = File.open("somefile.exs")
+            { :ok, #PID<x.x.x> }
+            # A PID is how we access the contents
+        ``` 
+    - Usually we write code assuming success:
+        ```exlixir
+            > { :ok, file } = File.open("somefile.exs") # File that exists
+            { :ok, #PID<x.x.x> }
+            > { :ok, file } = File.open("newkopkaf.exs") # File that doesn't exist
+            ** (MatchError) .... # return value is { :error. :enoent }
+            # `enoent` is Unix-speak for "file doesn't exist"
+        ```
+
+- Lists:
