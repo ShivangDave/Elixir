@@ -134,4 +134,132 @@ Elixir collections can hold values of any type (including other collections).
             # `enoent` is Unix-speak for "file doesn't exist"
         ```
 
-- Lists
+- Lists:
+    - Despite what they seems like syntactically, `Lists` aren't like `arrays` in other languages. In fact, `tuples` are the closest elixir gets to a conventional array. `Lists` are more like `Linked lists`.
+    - **Definition:** A list may either be empty or consist of a head and a tail. The head contains a value and the tail is itself a list. (I don't remember `LISP` exactly from `AI` class that I took years ago but this is very similar to that.)
+    - Based on how they're implemented, lists are easy to traverse `linearly`. Lists are very expensive to traverse `randomly`. Cheapest travarsal is either get the `head` or the `tail` of a list.
+    - On top of this, Lists are immutable. Once made, they never change. 
+    - So, if you remove the first element (head) of a list then instead of following the typical pattern of copying the tail, we can return a pointer to the tail. More on travarsal is coming later.
+    - i.e.:
+        ```elixir
+            > [1,2,3] ++ [4,5,6] #concatenation
+            [1, 2, 3, 4, 5, 6, 7]
+            > [1,2,3,4] -- [2,4] #difference
+            [1,3]
+            > 1 in [1,2,3,4] #membership
+            true
+            > "pikachu" in [1,2,3,4]
+            false
+        ```
+
+    - **Keyword Lists**:
+        - A list of key-value pairs
+        - i.e.:
+            ```elixir
+                # if we type
+                [ name: 'Shivang', city: 'Houston', likes: 'Learning new stuff' ]
+
+                # elixir converts it into a list of two-value tuples
+                [ {:name, "Shivang"}, {:city, "Houston"}, {:likes, "Learning new stuff"} ]
+
+                # if a keyword list is the last argument in a function call we can leave off the brackets
+                # So instead of this,
+                > DB.save record, [ { :use_transaction, true }, { :logging, "HIGH" } ]
+                # We can write this!
+                > DB.save record, use_transaction: true, logging: "HIGH"
+
+                # We can also leave off the brackets if a keyword list appears as the last item in any context where a list of value is expected.
+                > [1, fred: 1, dave: 2]
+                [1, {:fred, 1}, {:dave, 2} ]
+                > {1, fred: 1, dave: 2}
+                {1, [fred: 1, dave: 2]}
+            ```
+
+- Maps:
+    - A map is a collection of key-value pairs
+    - i.e.:
+        ```elixir
+            %{ key => value, key => value }
+        ```
+    - Some more example maps:
+        ```elixir
+            # In this, keys are strings
+            > states = %{ "AL" => "Alabama", "TX" => "Texas" }
+            %{ "AL" => "Alabama", "TX" => "Texas" }
+
+            # In this, keys are tuples
+            > responses = %{ { :error, :enoent } => :fatal, { :error, :busy} => :retry }
+            %{ { :error, :enoent } => :fatal, { :error, :busy} => :retry }
+
+            # In this, keys are atoms
+            > colors = %{ :red => 0xff0000, :green => 0x00ff00, :blue => 0x0000ff }
+            %{ blue: 255, green: 65280, red: 16711680 }
+        ```
+    - We don't have to make all the keys same types.
+    - i.e.
+        ```elixir
+            > %{ "one" => 1, :two => 2, { 1, 1, 1 } => 3 }
+            %{ :two => 2, { 1, 1, 1 } => 3, "one" => 1 }
+        ```
+    - if the key is an atom, can use the same shortcut as with keyword lists:
+    - i.e.
+        ```elixir
+            > colors = %{ ​red:​ 0xff0000, ​green:​ 0x00ff00, ​blue:​ 0x0000ff }
+            %{ blue: 255, green: 65280, red: 16711680 }
+        ```
+    - Expressions can also be used as the keys in map literals.
+    - i.e.
+        ```elixir
+            > name = "John Snow"
+            "John Snow"
+            > %{ String.downcase(name) => name}
+            %{ "john snow" => "John Snow" }
+        ```
+
+    - **IMPORTANT: Diff between Maps and Keyword Lists**:
+        - Keys in `Maps` are `unique`. Maps don't allow keys to be repeated.
+        - Keys in `Keyword Lists` can be repeated. 
+        - `Maps` are more efficient (particularly as they grow) and can be used in Elixir's `pattern matching`
+        - `Keyword Lists` are used for things such as `command-line parameters`, `passing around options` and `building an associative array`.
+
+    - **Accessing a Map:**
+        - Use the `key` with square brackets to get to the `value`
+        - i.e.
+            ```elixir
+                > states = %{ "AL" => "Alabama", "TX" => "Texas" }
+                %{ "AL" => "Alabama", "TX" => "Texas" }
+
+                > states["AL"] # exists
+                "Alabama"
+
+                > states["AK"] # doesn't exist
+                nil 
+                
+                ......
+
+                > response_types = %{ { :error, :enoent } => :fatal, { :error, :busy } => :retry }
+                %{ { :error, :enoent } => :fatal, { :error, :busy } => :retry }
+                
+                > response_types[{:error, :busy}]
+                :retry
+
+                ......
+
+                # if the keys are atom, we can use a dot notation too!
+                > colors = %{ :red => 0xff0000, :green => 0x00ff00, :blue => 0x0000ff }
+                %{ blue: 255, green: 65280, red: 16711680 }
+
+                > colors[:red]
+                16711680
+
+                > colors.green
+                65280
+
+                > colors.black
+                ** (KeyError) # No matching key exists.
+            ```
+        
+- Binaries
+
+            
+    
