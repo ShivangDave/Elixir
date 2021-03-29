@@ -259,7 +259,98 @@ Elixir collections can hold values of any type (including other collections).
                 ** (KeyError) # No matching key exists.
             ```
         
-- Binaries
+- Binaries:
+    - If you need to access media files or something then `binaries` are your homies. `Binaries` allow you to access data as a sequence of bits and bytes. Binary literals are enclosed between `<<` and `>>`.
+    - i.e.
+        ```elixir
+            > bin = << 1, 2 >>
+            << 1, 2 >>
+
+            > byte_size bin
+            2
+        ```
+    - Add `modifiers` to control the `type` and `size` of each individual field. Here's a single byte that contains three fields of widths 2, 4 and 2 bits. 
+    - i.e.
+        ```elixir
+            > bin = << 3 :: size(2), 5 :: size(4), 1 :: size(2) >>
+            << 213 >>
+
+            > :io.format("~-8.2b~n", :binary.bin_to_list(bin))
+            11010101
+            :ok
+
+            > byte_size bin
+            1
+        ```
+    - Binaries are both important and arcane. Elixir uses em to represent `UTF` strings. `Arcane` because, we're unlikely to use em directly. 
+
+- Dates and Times:
+    - Calendar module was added in `Elixir 1.3` along with four new `date` and `time` related types. They were little more than data holders.
+    - Started getting useful from `Elixir 1.5`
+    - The `Calendar` module represents rules used to manipluate dates.
+    - The `Date` type holds `a year, a month and a reference to the ruling calendar`
+    - i.e.
+        ```elixir
+            > d1 = Date.new(2018, 12, 25)
+            { :ok, ~D[2018-12-25] }
+
+            > { :ok, d1 } = Date.new(2018, 12, 25)
+            { :ok, ~D[2018-12-25] }
+
+            > d2 = ~D[2018-12-25]
+            ~D[2018-12-25]
+
+            > d1 == d2
+            true
+
+            > Date.day_of_week(d1)
+            2
+
+            > Date.add(d1, 7)
+            ~D[2019-01-01]
+
+            > inspect d1, structs: false
+            "%{ __structs__: Date, calendar: Calendar.ISO, day: 25, month: 12, year: 2018 }"
+        ```
+    - Sequences `~D[...]` and `~T[...]` are examples of Elixir's ***sigils***. A way of constructing literal values.
+    - Elixir also supports representing a range of dates:
+    - i.e.:
+        ```elixir
+            > d1 = ~D[2018-01-01]
+            ~D[2018-01-01]
+
+            > d2 = ~D[2018-06-30]
+            ~D[2018-06-30]
+
+            > first_half = Date.range(d1, d2)
+            #DateRange<~D[2018-01-01], ~D[2018-06-30]>
+
+            > Enum.count(first_half)
+            181
+
+            > ~D[2018-03-15] in first_half
+            true
+        ```
+    - The `Time` type contains `an hour, a minute, a second, and fractions of a second`. The fraction is stored as a tuple containing `microseconds` and the number of `significant` digits. Time values track the number of significant digits in the seconds field means that `~T[12:34:56.0]` is not equal to `~T[12:34:56.00]`.
+    - i.e.:
+        ```elixir
+            > { :ok, t1 } = Time.new(12, 34, 56)
+            { :ok, ~T[12:34:56] }
+
+            > t2 = ~T[12:34:56.78]
+            ~T[12:34:56.78]
+
+            > t1 == t2
+            false
+
+            > Time.add(t1, 3600)
+            ~T[13:34:56.000000]
+
+            > Time.add(t1, 3600, :millisecond)
+            ~T[12:34:59.600000]
+        ```
+    - Two date/time types: `DateTime` and `NaiveDateTime`. The naive version contains just a `date` and a `time`; `DateTime` adds the ability to associate a timezone. The `~N[...]` sigil constructs `NaiveDateTime` structs.
+    - Checkout this third-party library: [Lau Taarnskov's Calendar Library](https://github.com/lau/calendar)
 
             
     
