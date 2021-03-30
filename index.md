@@ -1,7 +1,48 @@
+## ⭐️ Day off
+> March 30, 2021
+>
+> `Keeping up the pace` sounds easy when you're able to focus on the task on hand full time. Part time? Realllyyyyyy difficult. I realize this as I feel a little burnout. So I think I'm going to take today off from studying and refocus.
+>
+> May be watch the `LOTR triolgy` 🍿 Catch ya later! 
+>
+
+<br />
+
+____
+
+
+## ⭐️ Almost there? 🥲
+> March 29, 2021
+>
+> While it feels like an eternity, it really does make a difference when you go and learn basics first. Almost ready to start experimenting with `Elixir`.
+>
+> I didn't get a chance to pickup the pace. So I only able to review `Binaries` and `Date & Time` modules. While they're fun to play with, I'll only be able evaluate it once I get to implementation. 
+>
+> As always, you can find the notes on GitHub. I really feel that I wouldn't be making such progress without the book. Cannot recommend it enough.
+>
+
+<br />
+
+____
+
+
+## ⭐️ And then Sunday happened.
+> March 28, 2021
+>
+> Oh man, I understand now how my students would feel studying on a sunday. I did manage to get a little productive for the sake of it and wrapped up `Lists` and `Maps`.
+>
+> So similar but so different compared to `Arrays` and `Hashes (Objects in JS)`. I like 'em. On to the `Binaries` we go!
+>
+
+<br />
+
+____
+
+
 ## ⭐️ More Basics... More Fun.. ish..
 > March 27, 2021 
 > 
-> Learning on a saturday doesn't feel quite right. But I did wrap up `Value Types`. Learning about `System Types` was a walk down memory lane. Reminded me of all the code I wrote for multi-threaded apps in `C++` during one of my master's degree classes.  
+> Studying on a saturday doesn't feel quite right. But I did wrap up `Value Types`. Learning about `System Types` was a walk down memory lane. Reminded me of all the code I wrote for multi-threaded apps in `C++` during one of my master's degree classes.  
 > 
 > `Collection Types` in elixir are just a tad different than what I was anticipating. But the weekend vibes aren't going to go away easily. Hopefully I can resume tomorrow starting with learning about `Lists`.
 >  
