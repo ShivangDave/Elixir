@@ -129,7 +129,7 @@ ____
 >    <img src="https://media4.giphy.com/media/l0He4nkyI5cMhXzvW/200.gif">
 > </p>
 >
-> Still going to be using markdown to write these blogs. But atleast they're going to look prettier than the usual `.md` preview. 
+> Still going to be using markdown to write these blogs. But atleast they're going to look prettier than the usual `.md` previews. 
 > 
 > - [Webpage Source]
 
