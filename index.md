@@ -1,3 +1,14 @@
+## ⭐️ No updates! 
+> March 31, 2021
+>
+> Due to personal reasons won't be able to work on anything today as well. Gotta prioritize life stuff 👋🏻
+>
+
+<br />
+
+____
+
+
 ## ⭐️ Day off
 > March 30, 2021
 >
