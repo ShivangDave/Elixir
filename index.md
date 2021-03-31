@@ -72,7 +72,7 @@ ____
 >    <img src="https://media2.giphy.com/media/xT5LMGfQrJPpmXKUEM/giphy.gif" height="200">
 > </p>
 >
-> Vaccine day hit really hard. Didn't really get much done today. Went over some elixir basics. Started by learning about overall `Built In Types`. Followed by going deeper into `Value Types` subcategory.
+> Vaccine day hit really hard. Didn't really get much done today. Went over some elixir basics. Started by learning about overall `Built In Types`. Followed by diving deeper into `Value Types` subcategory.
 >
 > Prepared some good notes on `Integers`, `Atoms`, `Ranges` and `RegEx`. Good stuff.
 > 
