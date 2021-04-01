@@ -165,7 +165,7 @@ ____
 ## ⭐️ IO.puts "Hello World ☀️"
 > March 22, 2021 
 > 
-> I wanted 2021 to be way more different than 2020. So I decided that I'm going to try and experiment with as many languages & platforms as I can. It is definitely going to be an interesting journey and for no specific reason, I'm going to document all of it 🤔 I'm going to try and do everything by the books (cuz I miss reading books!) 📚 I'll be referring to [Programming Elixir 1.6] for the most part. 
+> I wanted 2021 to be a lot different than 2020. So I decided that I'm going to try and experiment with as many languages & platforms as I can. It is definitely going to be an interesting journey and for no specific reason, I'm going to document all of it 🤔 I'm going to try and do everything by the books (cuz I miss reading books!) 📚 I'll be referring to [Programming Elixir 1.6] for the most part. 
 >
 > <p align="center">
 >   <a href="https://pragprog.com/titles/elixir16/programming-elixir-1-6/" target="_blank">
