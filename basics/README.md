@@ -1,5 +1,5 @@
 # Elixir Basics
-Let's go over some data types that elixir supports. 
+Let's go over some data types that elixir supports.
 
 #### **Built In Types**
 - Value types:
@@ -7,8 +7,8 @@ Let's go over some data types that elixir supports.
     - Floating-point Numbers
     - Atoms
     - Ranges
-    - Regular Expressions (RegEx) 
-    > `Ranges` & `RegEx` isn't value type technically. Under the hood they're structures. 
+    - Regular Expressions (RegEx)
+    > `Ranges` & `RegEx` isn't value type technically. Under the hood they're structures.
 
 - System types:
     - PIDs and ports
@@ -36,7 +36,7 @@ This list doesn't include things like `String` and `Structures`. Elixir does sup
 
 - Floating-Point Numbers:
     - There must be atleast one digit before and after the decimal point when writing floating point numbers. i.e. `1,0`, `0.2456`, `0.314159e1`, `314159.0e-5`
-    - Floats are `IEEE 754` double precision, giving em `16` digits of accuracy and a maximum exponent of around `10^308` 
+    - Floats are `IEEE 754` double precision, giving em `16` digits of accuracy and a maximum exponent of around `10^308`
 
 - Atoms:
     - Atoms are constants that represent something's name.
@@ -49,11 +49,11 @@ This list doesn't include things like `String` and `Structures`. Elixir does sup
 - Ranges:
     - `start..end` => where start and end are integers
 
-- RegEx: 
+- RegEx:
     - Elixir has regex literals, written as `~r{regexp}` or `~r{regexp}opts`.
     - Considerably more flexible! Additionally, can choose any `nonalphanumeric characters` as delimiters.
-    - We can also specify one or more single chars options following a regexp literal. 
-    
+    - We can also specify one or more single chars options following a regexp literal.
+
     > | Opt | Meaning |
     > | - | - |
     > | f |  Force the pattern to start to match on the first line of a multiline string.|
@@ -84,7 +84,7 @@ These types reflect resources in the underlying `Erlang VM`.
 
 - PIDs and Ports:
     - PID is a reference to a local or remote process
-    - Port is a reference to a resource (typically external to the application) that you'll be reading or writing 
+    - Port is a reference to a resource (typically external to the application) that you'll be reading or writing
     - PID of the current process is available by calling `self`. A new PID is created when you spawn a new process.
 
 - References:
@@ -95,7 +95,7 @@ These types reflect resources in the underlying `Erlang VM`.
 Elixir collections can hold values of any type (including other collections).
 
 - Tuples:
-    - A tuple is an ordered collection of values. 
+    - A tuple is an ordered collection of values.
     - Once created a tuple cannot be modified.
     - i.e.
         ```elixir
@@ -124,7 +124,7 @@ Elixir collections can hold values of any type (including other collections).
             > { status, file } = File.open("somefile.exs")
             { :ok, #PID<x.x.x> }
             # A PID is how we access the contents
-        ``` 
+        ```
     - Usually we write code assuming success:
         ```exlixir
             > { :ok, file } = File.open("somefile.exs") # File that exists
@@ -138,7 +138,7 @@ Elixir collections can hold values of any type (including other collections).
     - Despite what they seems like syntactically, `Lists` aren't like `arrays` in other languages. In fact, `tuples` are the closest elixir gets to a conventional array. `Lists` are more like `Linked lists`.
     - **Definition:** A list may either be empty or consist of a head and a tail. The head contains a value and the tail is itself a list. (I don't remember `LISP` exactly from `AI` class that I took years ago but this is very similar to that.)
     - Based on how they're implemented, lists are easy to traverse `linearly`. Lists are very expensive to traverse `randomly`. Cheapest travarsal is either get the `head` or the `tail` of a list.
-    - On top of this, Lists are immutable. Once made, they never change. 
+    - On top of this, Lists are immutable. Once made, they never change.
     - So, if you remove the first element (head) of a list then instead of following the typical pattern of copying the tail, we can return a pointer to the tail. More on travarsal is coming later.
     - i.e.:
         ```elixir
@@ -218,7 +218,7 @@ Elixir collections can hold values of any type (including other collections).
 
     - **IMPORTANT: Diff between Maps and Keyword Lists**:
         - Keys in `Maps` are `unique`. Maps don't allow keys to be repeated.
-        - Keys in `Keyword Lists` can be repeated. 
+        - Keys in `Keyword Lists` can be repeated.
         - `Maps` are more efficient (particularly as they grow) and can be used in Elixir's `pattern matching`
         - `Keyword Lists` are used for things such as `command-line parameters`, `passing around options` and `building an associative array`.
 
@@ -233,13 +233,13 @@ Elixir collections can hold values of any type (including other collections).
                 "Alabama"
 
                 > states["AK"] # doesn't exist
-                nil 
-                
+                nil
+
                 ......
 
                 > response_types = %{ { :error, :enoent } => :fatal, { :error, :busy } => :retry }
                 %{ { :error, :enoent } => :fatal, { :error, :busy } => :retry }
-                
+
                 > response_types[{:error, :busy}]
                 :retry
 
@@ -258,7 +258,7 @@ Elixir collections can hold values of any type (including other collections).
                 > colors.black
                 ** (KeyError) # No matching key exists.
             ```
-        
+
 - Binaries:
     - If you need to access media files or something then `binaries` are your homies. `Binaries` allow you to access data as a sequence of bits and bytes. Binary literals are enclosed between `<<` and `>>`.
     - i.e.
@@ -269,7 +269,7 @@ Elixir collections can hold values of any type (including other collections).
             > byte_size bin
             2
         ```
-    - Add `modifiers` to control the `type` and `size` of each individual field. Here's a single byte that contains three fields of widths 2, 4 and 2 bits. 
+    - Add `modifiers` to control the `type` and `size` of each individual field. Here's a single byte that contains three fields of widths 2, 4 and 2 bits.
     - i.e.
         ```elixir
             > bin = << 3 :: size(2), 5 :: size(4), 1 :: size(2) >>
@@ -282,7 +282,7 @@ Elixir collections can hold values of any type (including other collections).
             > byte_size bin
             1
         ```
-    - Binaries are both important and arcane. Elixir uses em to represent `UTF` strings. `Arcane` because, we're unlikely to use em directly. 
+    - Binaries are both important and arcane. Elixir uses em to represent `UTF` strings. `Arcane` because, we're unlikely to use em directly.
 
 - Dates and Times:
     - Calendar module was added in `Elixir 1.3` along with four new `date` and `time` related types. They were little more than data holders.
@@ -352,5 +352,5 @@ Elixir collections can hold values of any type (including other collections).
     - Two date/time types: `DateTime` and `NaiveDateTime`. The naive version contains just a `date` and a `time`; `DateTime` adds the ability to associate a timezone. The `~N[...]` sigil constructs `NaiveDateTime` structs.
     - Checkout this third-party library: [Lau Taarnskov's Calendar Library](https://github.com/lau/calendar)
 
-            
-    
+- Name, Source Files, Conventions, Operators and More:
+  - 
